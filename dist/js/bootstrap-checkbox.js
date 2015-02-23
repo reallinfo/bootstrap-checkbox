@@ -1,5 +1,5 @@
 /*!
- * Bootstrap-checkbox v1.2.4 (http://vsn4ik.github.io/bootstrap-checkbox)
+ * Bootstrap-checkbox v1.2.5 (http://vsn4ik.github.io/bootstrap-checkbox)
  * Copyright 2013-2015 Vasily A. (https://github.com/vsn4ik)
  * Licensed under MIT (https://github.com/vsn4ik/bootstrap-checkbox/blob/master/LICENSE)
  */
@@ -32,10 +32,10 @@
       return;
     }
 
-    this.$group = $('<div class="btn-group">');
+    this.$group = $('<div class="btn-group"></div>');
 
     // .btn-group-justified works with <a> elements as the <button> doesn't pick up the styles
-    this.$buttons = $('<a><a>').addClass('btn');
+    this.$buttons = $('<a></a><a></a>').addClass('btn');
 
     // === '': <... data-reverse>
     var reverse = this.options.reverse || this.options.reverse === '';
@@ -52,19 +52,31 @@
       this.$element.hide();
 
       if (this.options.offLabel) {
-        this.$off.html(this.options.offLabel);
+        this.$off.text(this.options.offLabel);
       }
 
       if (this.options.onLabel) {
-        this.$on.html(this.options.onLabel);
+        this.$on.text(this.options.onLabel);
       }
 
       if (this.options.offIconClass) {
-        this.$off.prepend('<span class="' + this.options.offIconClass + '">');
+        if (this.options.offLabel) {
+          // &nbsp; -- whitespace (or wrap into span)
+          this.$off.prepend('&nbsp;');
+        }
+
+        // $.addClass for XSS check
+        $('<span></span>').addClass(this.options.offIconClass).prependTo(this.$off);
       }
 
       if (this.options.onIconClass) {
-        this.$on.prepend('<span class="' + this.options.onIconClass + '">');
+        if (this.options.onLabel) {
+          // &nbsp; -- whitespace (or wrap into span)
+          this.$on.prepend('&nbsp;');
+        }
+
+        // $.addClass for XSS check
+        $('<span></span>').addClass(this.options.onIconClass).prependTo(this.$on);
       }
 
       if (this.element.checked) {
