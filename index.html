@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="assets/css/docs.css">
 
   <script src="vendor/jquery/js/jquery.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/highlight.js/9.2.0/highlight.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/highlight.js/9.3.0/highlight.min.js" defer></script>
   <script src="dist/js/bootstrap-checkbox.js" defer></script>
   <script src="assets/js/docs.js" defer></script>
 </head>
@@ -34,7 +34,7 @@
   <p class="lead">A checkbox component based on Bootstrap framework.</p>
 
   <div class="btn-toolbar">
-    <a class="btn btn-primary m-b pull-left" href="https://github.com/vsn4ik/bootstrap-checkbox/archive/v1.3.3.zip" download>
+    <a class="btn btn-primary m-b pull-left" href="https://github.com/vsn4ik/bootstrap-checkbox/archive/v1.4.0.zip" download>
       <span class="octicon octicon-cloud-download"></span>
       <span>Download</span>
     </a>
@@ -54,7 +54,7 @@
   &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"&gt;
   &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"&gt;
 
-  &lt;script src="https://code.jquery.com/jquery-2.2.2.min.js" defer&gt;&lt;/script&gt;
+  &lt;script src="https://code.jquery.com/jquery-2.2.3.min.js" defer&gt;&lt;/script&gt;
   &lt;script src="dist/js/bootstrap-checkbox.min.js" defer&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -81,39 +81,59 @@
 
     <tbody>
       <tr>
-        <td>style</td>
-        <td>false | string</td>
-        <td>false</td>
+        <td>baseGroupCls</td>
+        <td>null | string</td>
+        <td>'btn-group'</td>
       </tr>
       <tr>
-        <td>defaultClass</td>
-        <td>string</td>
+        <td>baseCls</td>
+        <td>null | string</td>
+        <td>'btn'</td>
+      </tr>
+      <tr>
+        <td>groupCls</td>
+        <td>null | string</td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>cls</td>
+        <td>null | string</td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>offCls</td>
+        <td>null | string</td>
         <td>'btn-default'</td>
       </tr>
       <tr>
-        <td>disabledCursor</td>
-        <td>false | string</td>
-        <td>'not-allowed'</td>
+        <td>onCls</td>
+        <td>null | string</td>
+        <td>'btn-default'</td>
       </tr>
       <tr>
-        <td>offClass</td>
-        <td>string</td>
+        <td>offActiveCls</td>
+        <td>null | string</td>
         <td>'btn-danger'</td>
       </tr>
       <tr>
-        <td>onClass</td>
-        <td>string</td>
+        <td>onActiveCls</td>
+        <td>null | string</td>
         <td>'btn-success'</td>
       </tr>
       <tr>
         <td>offLabel</td>
-        <td>false | string</td>
+        <td>null | string</td>
         <td>'No'</td>
       </tr>
       <tr>
         <td>onLabel</td>
-        <td>false | string</td>
+        <td>null | string</td>
         <td>'Yes'</td>
+      </tr>
+      <tr>
+        <td>disabledCursor</td>
+        <td>null | string</td>
+        <td>'not-allowed'</td>
       </tr>
       <tr>
         <td>html</td>
@@ -121,24 +141,29 @@
         <td>false</td>
       </tr>
       <tr>
-        <td>offIconClass</td>
-        <td>false | string</td>
-        <td>false</td>
+        <td>iconCls</td>
+        <td>null | string</td>
+        <td>'glyphicon'</td>
       </tr>
       <tr>
-        <td>onIconClass</td>
-        <td>false | string</td>
-        <td>false</td>
+        <td>offIconCls</td>
+        <td>null | string</td>
+        <td>null</td>
+      </tr>
+      <tr>
+        <td>onIconCls</td>
+        <td>null | string</td>
+        <td>null</td>
       </tr>
       <tr>
         <td>offTitle</td>
-        <td>false | string</td>
-        <td>false</td>
+        <td>null | string</td>
+        <td>null</td>
       </tr>
       <tr>
         <td>onTitle</td>
-        <td>false | string</td>
-        <td>false</td>
+        <td>null | string</td>
+        <td>null</td>
       </tr>
       <tr>
         <td>reverse</td>
@@ -210,42 +235,34 @@
 
   <div class="form-group">
     <div class="col-sm-3">
-      <input type="checkbox" data-style="btn-group-sm m-b">
+      <input type="checkbox" data-group-cls="btn-group-sm m-b">
+      <input type="checkbox" data-group-cls="btn-group-lg m-b">
     </div>
 
     <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;input type="checkbox" data-style="btn-group-sm"&gt;</code></pre>
+      <pre><code class="hljs xml">&lt;input type="checkbox" data-group-cls="btn-group-sm"&gt;
+&lt;input type="checkbox" data-group-cls="btn-group-lg"&gt;</code></pre>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-3">
-      <input type="checkbox" data-style="btn-group-lg m-b">
+      <input type="checkbox" data-group-cls="btn-group-vertical m-b">
     </div>
 
     <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;input type="checkbox" data-style="btn-group-lg"&gt;</code></pre>
+      <pre><code class="hljs xml">&lt;input type="checkbox" data-group-cls="btn-group-vertical"&gt;</code></pre>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-3">
-      <input type="checkbox" data-style="btn-group-vertical m-b">
-    </div>
-
-    <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;input type="checkbox" data-style="btn-group-vertical"&gt;</code></pre>
-    </div>
-  </div>
-
-  <div class="form-group">
-    <div class="col-sm-3">
-      <input type="checkbox" checked data-style="btn-group-justified m-b">
+      <input type="checkbox" checked data-group-cls="btn-group-justified m-b">
     </div>
 
     <div class="col-sm-9">
       <pre><code class="hljs xml">&lt;div class="col-sm-3"&gt;
-  &lt;input type="checkbox" data-style="btn-group-justified"&gt;
+  &lt;input type="checkbox" data-group-cls="btn-group-justified"&gt;
 &lt;/div&gt;</code></pre>
     </div>
   </div>
@@ -272,21 +289,21 @@
 
   <div class="form-group">
     <div class="col-sm-3">
-      <input type="checkbox" data-off-icon-class="glyphicon glyphicon-thumbs-down" data-on-icon-class="glyphicon glyphicon-thumbs-up">
+      <input type="checkbox" data-off-icon-cls="glyphicon-thumbs-down" data-on-icon-cls="glyphicon glyphicon-thumbs-up">
     </div>
 
     <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;input type="checkbox" data-off-icon-class="gluphicon gluphicon-thumbs-down" data-on-icon-class="gluphicon gluphicon-thumbs-up"&gt;</code></pre>
+      <pre><code class="hljs xml">&lt;input type="checkbox" data-off-icon-cls="gluphicon-thumbs-down" data-on-icon-cls="gluphicon-thumbs-up"&gt;</code></pre>
     </div>
   </div>
 
   <div class="form-group">
     <div class="col-sm-3">
-      <input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-class="glyphicon glyphicon-thumbs-down" data-on-icon-class="glyphicon glyphicon-thumbs-up">
+      <input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-cls="glyphicon-thumbs-down" data-on-icon-cls="glyphicon-thumbs-up">
     </div>
 
     <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-class="glyphicon glyphicon-thumbs-down" data-on-icon-class="glyphicon glyphicon-thumbs-up"&gt;</code></pre>
+      <pre><code class="hljs xml">&lt;input type="checkbox" data-off-label="false" data-on-label="false" data-off-icon-cls="glyphicon-thumbs-down" data-on-icon-cls="glyphicon-thumbs-up"&gt;</code></pre>
     </div>
   </div>
 
@@ -309,11 +326,15 @@ $('#input-1').checkboxpicker({
 
   <div class="form-group">
     <div class="col-sm-3">
-      <input type="checkbox" checked data-off-class="btn-warning" data-on-class="btn-primary">
+      <input type="checkbox" checked data-off-active-cls="btn-warning" data-on-active-cls="btn-primary">
+      <input type="checkbox" checked data-off-cls="btn-danger" data-on-cls="btn-success" data-on-active-cls="btn-default" data-off-active-cls="btn-default">
+      <input type="checkbox" checked data-cls="btn-default" data-off-cls="null" data-on-cls="null" data-on-active-cls="null" data-off-active-cls="null">
     </div>
 
     <div class="col-sm-9">
-      <pre><code class="hljs xml">&lt;input type="checkbox" checked data-off-class="btn-warning" data-on-class="btn-primary"&gt;</code></pre>
+      <pre><code class="hljs xml">&lt;input type="checkbox" checked data-off-active-cls="btn-warning" data-on-active-cls="btn-primary"&gt;
+&lt;input type="checkbox" checked data-off-cls="btn-danger" data-on-cls="btn-success" data-on-active-cls="btn-default" data-off-active-cls="btn-default"&gt;
+&lt;input type="checkbox" checked data-cls="btn-default" data-off-cls="null" data-on-cls="null" data-on-active-cls="null" data-off-active-cls="null"&gt;</code></pre>
     </div>
   </div>
 
