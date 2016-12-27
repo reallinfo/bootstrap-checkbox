@@ -18,11 +18,11 @@
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="vendor/octicons/css/octicons.css">
-  <link rel="stylesheet" href="vendor/highlight.js/css/zenburn.css">
+  <link rel="stylesheet" href="vendor/highlight.js/css/atom-one-dark.css">
   <link rel="stylesheet" href="assets/css/docs.css">
 
   <script src="vendor/jquery/js/jquery.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/highlight.js/9.5.0/highlight.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" defer></script>
   <script src="dist/js/bootstrap-checkbox.js" defer></script>
   <script src="assets/js/docs.js" defer></script>
 </head>
@@ -54,7 +54,7 @@
   &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
   &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"&gt;
 
-  &lt;script src="https://code.jquery.com/jquery-3.1.0.min.js" defer&gt;&lt;/script&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.1.1.min.js" defer&gt;&lt;/script&gt;
   &lt;script src="dist/js/bootstrap-checkbox.min.js" defer&gt;&lt;/script&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -385,13 +385,13 @@ $('#input-1').checkboxpicker({
 
 <h3>Calling from an event</h3>
 <p>To trigger an action use a change event.</p>
-<pre><code class="hljs javascript">$(':checkbox').checkboxpicker().change(function() {
+<pre><code class="hljs javascript">$(':checkbox').checkboxpicker().on('change', function() {
   ...
 });</code></pre>
 
 <p>Or call it, by an specific id member of the DOM.</p>
 <pre><code class="hljs javascript">$('#input-1').checkboxpicker();
-$('#input-1').change(function() {
+$('#input-1').on('change', function() {
   ...
 });</code></pre>
 
